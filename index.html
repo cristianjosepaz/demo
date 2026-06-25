@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativa WhatsApp API</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="tabs">
+        <button class="tab active" data-mode="official">
+            API OFICIAL
+        </button>
+
+        <button class="tab" data-mode="alternative">
+            API ALTERNATIVA
+        </button>
+    </div>
+
+    <div class="demo-layout">
+
+        <div class="instructions">
+
+            <h3>Pruebe la Demo</h3>
+
+            <p><strong>Hola</strong></p>
+            <p>Saludo inicial del bot.</p>
+
+            <p><strong>Atención</strong></p>
+            <p>Muestra horarios de atención.</p>
+
+            <p><strong>Turno</strong></p>
+            <p>Inicia la reserva de turnos.</p>
+
+            <hr>
+
+            <p>
+                Compare la experiencia entre
+                API Oficial y API Alternativa.
+            </p>
+
+        </div>
+
+        <div class="phone">
+
+            <div class="notch"></div>
+
+            <div class="chat-header">
+                VetBot 🐾
+            </div>
+
+            <div id="chat" class="chat-body"></div>
+
+            <div class="chat-input">
+                <input
+                    id="messageInput"
+                    type="text"
+                    placeholder="Escribe un mensaje..."
+                >
+
+                <button id="sendBtn">
+                    ➤
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
