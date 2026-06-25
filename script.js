@@ -103,35 +103,27 @@ function handleBot(message) {
 
     const msg = message.toLowerCase().trim();
 
-    if (mode === "alternative" && waitingAlternativeTurn) {
+    if (msg === "1" || msg === "2" || msg === "3") {
 
-        if (msg === "1" || msg === "2" || msg === "3") {
+        let tipoTurno = "";
 
-            let tipoTurno = "";
+        if (msg === "1") tipoTurno = "consulta";
+        if (msg === "2") tipoTurno = "vacunación";
+        if (msg === "3") tipoTurno = "control";
 
-            if (msg === "1") tipoTurno = "consulta";
-            if (msg === "2") tipoTurno = "vacunación";
-            if (msg === "3") tipoTurno = "control";
-
-            botMessage(
-                "✅ Su turno para " +
-                tipoTurno +
-                " se ha reservado correctamente."
-            );
-
-            waitingAlternativeTurn = false;
-
-            botMessage(
-                "¿La atención ha sido satisfactoria?<br><br>" +
-                "👍 Escriba SI<br>" +
-                "👎 Escriba NO"
-            );
-
-            return;
-        }
+        waitingAlternativeTurn = false;
+        waitingAlternativeSurvey = true;
 
         botMessage(
-            "❌ Debe escribir 1, 2 o 3."
+            "✅ Su turno para " +
+            tipoTurno +
+            " se ha reservado correctamente."
+        );
+
+        botMessage(
+            "¿La atención ha sido satisfactoria?<br><br>" +
+            "👍 Escriba SI<br>" +
+            "👎 Escriba NO"
         );
 
         return;
@@ -139,6 +131,7 @@ function handleBot(message) {
 
     if (mode === "alternative" && waitingAlternativeSurvey) {
 
+        debugger;
         if (msg === "si") {
 
             waitingAlternativeSurvey = false;
